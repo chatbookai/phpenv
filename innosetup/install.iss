@@ -2,10 +2,12 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "学生心理健康智能分析系统"
+#define MyAppVersion "0.1"
 #define MyAppPublisher "单点科技"
 #define MyAppURL "https://www.dandian.net"
 #define MyAppExeName "MyProg-x64.exe"
 #define MyAppInstallDir "D:\MyXinLiJianKang"
+#define MyAppSourceDir "D:\a\phpenv\phpenv"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.

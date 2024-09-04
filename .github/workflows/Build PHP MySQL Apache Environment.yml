@@ -24,12 +24,9 @@ jobs:
         choco install innosetup -y
         echo "C:\Program Files (x86)\Inno Setup 6" >> $GITHUB_PATH
 
-    - name: Display GITHUB_WORKSPACE
-      run: echo "Code is downloaded to ${env:GITHUB_WORKSPACE}"
-
     - name: Compile Inno Setup Script
       run: |
-        ISCC.exe /DMyAppSourceDir="${env:GITHUB_WORKSPACE}" /DMyAppVersion={{env:MyAppVersion}} "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
+        ISCC.exe "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
         
     - name: Upload compiled EXE file
       uses: actions/upload-artifact@v2
