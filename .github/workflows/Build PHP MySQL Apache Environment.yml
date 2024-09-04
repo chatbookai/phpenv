@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  MyAppVersion: "0.2"
+  MyAppVersion: "0.1"
 
 jobs:
   build:
