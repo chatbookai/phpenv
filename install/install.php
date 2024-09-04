@@ -318,32 +318,7 @@
 	/////////////////// xampp path is changing ///////////////////
 	if ($xamppinstaller == "newpath") {
 		set_time_limit(0);
-		define('NEWSTDIN', fopen("php://stdin", "r")); // Fix by Wiedmann
-		while ($BS == "0") {
-			echo "\n  Do you want to refresh the XAMPP installation?\n";
-			echo "  Soll die XAMPP Installation jetzt aktualisiert werden?\n\n";
-			echo "  1) Refresh now! (Jetzt aktualisieren!)\n";
-			echo "  x) Exit (Beenden)\n";
-
-			switch (trim(fgets(NEWSTDIN, 256))) { // Fix by Wiedmann
-				case 1:
-					$BS = 1;
-					echo "\r\n  XAMPP is refreshing now ...\r\n";
-					echo "  XAMPP wird nun aktualisiert ...\r\n\r\n";
-					sleep(1);
-					break;
-
-				case "x":
-					echo "\r\n  The refresh is terminating on demand ...  exit\r\n";
-					echo "  Die Aktualisierung wurde auf Wunsch abgebrochen ...\r\n";
-					sleep(3);
-					exit;
-
-				default:
-					exit;
-			}
-		}
-		fclose(NEWSTDIN); // Fix by Wiedmann
+		$BS = 1;
 	}
 
 	/////////////////// You can configure the addon modules for httpd ///////////////////
