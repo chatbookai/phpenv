@@ -10,7 +10,7 @@ on:
 
 env:
   MyAppVersion: "0.1"
-  
+
 
 jobs:
   build:
@@ -32,5 +32,5 @@ jobs:
     - name: Upload compiled EXE file
       uses: actions/upload-artifact@v2
       with:
-        name: MyXinLiJianKang-{{env:MyAppVersion}}-installer
-        path: ${env:GITHUB_WORKSPACE}\MyXinLiJianKang-{{env:MyAppVersion}}.exe
+        name: MyXinLiJianKang-${env:MyAppVersion}-installer
+        path: "${env:GITHUB_WORKSPACE}\MyXinLiJianKang-${env:MyAppVersion}.exe"
