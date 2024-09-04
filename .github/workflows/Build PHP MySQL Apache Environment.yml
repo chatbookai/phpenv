@@ -33,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MyXinLiJianKang-${env:MyAppVersion}-installer
-        path: "${env:GITHUB_WORKSPACE}\MyXinLiJianKang-${env:MyAppVersion}.exe"
+        path: "${env:GITHUB_WORKSPACE}/MyXinLiJianKang-${env:MyAppVersion}.exe"
