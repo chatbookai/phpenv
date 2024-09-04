@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  MyAppVersion: "0.2"
+
 jobs:
   build:
     runs-on: windows-latest
@@ -26,10 +29,10 @@ jobs:
 
     - name: Compile Inno Setup Script
       run: |
-        ISCC.exe /DMyAppSourceDir="${env:GITHUB_WORKSPACE}" /DMyAppVersion="0.2" "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
+        ISCC.exe /DMyAppSourceDir="${env:GITHUB_WORKSPACE}" /DMyAppVersion={{env.MyAppVersion}} "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
         
     - name: Upload compiled EXE file
       uses: actions/upload-artifact@v2
       with:
-        name: MyXinLiJianKang-0.2-installer
-        path: ${env:GITHUB_WORKSPACE}\MyXinLiJianKang-0.2.exe
+        name: MyXinLiJianKang-{{env.MyAppVersion}}-installer
+        path: ${env:GITHUB_WORKSPACE}\MyXinLiJianKang-{{env.MyAppVersion}}.exe
