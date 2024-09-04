@@ -33,7 +33,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=D:\a\phpenv\phpenv
-OutputBaseFilename=MyXinLi-{#MyAppVersion}
+OutputBaseFilename=MyXinLiJianKang-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

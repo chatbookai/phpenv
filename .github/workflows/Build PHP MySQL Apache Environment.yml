@@ -27,3 +27,9 @@ jobs:
     - name: Compile Inno Setup Script
       run: |
         ISCC.exe "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
+        
+    - name: Upload compiled EXE file
+      uses: actions/upload-artifact@v2
+      with:
+        name: MyXinLiJianKang-0.1-installer
+        path: ${env:GITHUB_WORKSPACE}\MyXinLiJianKang-0.1.exe
