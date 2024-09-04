@@ -1,4 +1,4 @@
-name: Build PHP MySQL Apache Environment
+name: Build and Package with Inno Setup
 
 on:
   push:
@@ -16,5 +16,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install Inno Setup
+      run: |
+        choco install innosetup -y
+        echo "C:\Program Files (x86)\Inno Setup 6" >> $GITHUB_PATH
+
     - name: Display GITHUB_WORKSPACE
       run: echo "Code is downloaded to ${env:GITHUB_WORKSPACE}"
+
+    - name: Compile Inno Setup Script
+      run: |
+        ISCC.exe "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
