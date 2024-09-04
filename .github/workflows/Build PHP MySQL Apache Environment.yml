@@ -17,4 +17,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Print workspace directory
-      run: echo "Code is downloaded to $GITHUB_WORKSPACE"
+      run: echo "Code is downloaded to $GITHUB_WORKSPACE {$GITHUB_WORKSPACE}"
