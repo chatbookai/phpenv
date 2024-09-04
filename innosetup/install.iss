@@ -7,6 +7,7 @@
 #define MyAppURL "https://www.dandian.net"
 #define MyAppExeName "MyProg-x64.exe"
 #define MyAppInstallDir "D:\MyXinLiJianKang"
+#define MyAppSourceDir "C:\a\phpenv\phpenv"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -32,7 +33,7 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=D:\a\phpenv\phpenv
+OutputDir={#MyAppSourceDir}
 OutputBaseFilename=MyXinLiJianKang-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
@@ -45,7 +46,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\a\phpenv\phpenv\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#MyAppSourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
