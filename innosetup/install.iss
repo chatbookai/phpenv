@@ -38,6 +38,8 @@ OutputBaseFilename=MyXinLiJianKang-{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+DirExistsWarning=yes
+AllowUNCPath=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
