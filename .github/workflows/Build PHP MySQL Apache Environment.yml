@@ -33,8 +33,8 @@ jobs:
 
     - name: Generate self-signed certificate
       run: |
-        openssl req -x509 -newkey rsa:2048 -keyout yourdomain.key -out yourdomain.crt -days 365 -nodes -subj "/CN=YourApp"
-        openssl pkcs12 -export -out yourdomain.pfx -inkey yourdomain.key -in yourdomain.crt -passout pass:yourpassword
+        openssl req -x509 -newkey rsa:2048 -keyout D:/a/phpenv/phpenv/yourdomain.key -out D:/a/phpenv/phpenv/yourdomain.crt -days 365 -nodes -subj "/CN=YourApp"
+        openssl pkcs12 -export -out D:/a/phpenv/phpenv/yourdomain.pfx -inkey D:/a/phpenv/phpenv/yourdomain.key -in D:/a/phpenv/phpenv/yourdomain.crt -passout pass:yourpassword
     
 
 
