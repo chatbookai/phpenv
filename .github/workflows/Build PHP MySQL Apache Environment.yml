@@ -16,6 +16,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up OpenSSL
+      run: choco install openssl
+
+    - name: Generate self-signed certificate
+      run: |
+        openssl req -x509 -newkey rsa:2048 -keyout yourdomain.key -out yourdomain.crt -days 365 -nodes -subj "/CN=YourApp"
+        openssl pkcs12 -export -out yourdomain.pfx -inkey yourdomain.key -in yourdomain.crt -passout pass:yourpassword
+
     - name: Install Inno Setup
       run: |
         choco install innosetup -y

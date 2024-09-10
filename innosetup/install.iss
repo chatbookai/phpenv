@@ -41,6 +41,7 @@ WizardStyle=modern
 DirExistsWarning=yes
 AllowUNCPath=yes
 DisableDirPage=no
+SignTool=signtool sign /f yourdomain.pfx /p yourpassword /t http://timestamp.digicert.com
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -68,6 +69,7 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 [Run]
 Filename: "{app}\InitialSetup.bat"; Description: "{cm:LaunchProgram,InitialSetup}"; Flags: waituntilterminated postinstall skipifsilent
 Filename: "{app}\xampp-control.exe"; Description: "{cm:LaunchProgram,xampp-control}"; Flags: nowait postinstall skipifsilent
+
 
 [Code]
 procedure InitializeWizard();
