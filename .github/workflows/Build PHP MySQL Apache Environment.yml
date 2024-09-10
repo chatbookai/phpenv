@@ -27,6 +27,10 @@ jobs:
     - name: Install Windows SDK
       run: choco install windows-sdk-10.1
       
+    - name: Verify signtool path
+      run: |
+        where signtool
+
     - name: Install Inno Setup
       run: |
         choco install innosetup -y
