@@ -41,7 +41,7 @@ WizardStyle=modern
 DirExistsWarning=yes
 AllowUNCPath=yes
 DisableDirPage=no
-SignTool=signtool sign /f D:/a/phpenv/phpenv/yourdomain.pfx /p yourpassword /t http://timestamp.digicert.com
+SignTool=signtool.exe sign /f D:/a/phpenv/phpenv/yourdomain.pfx /p yourpassword /t http://timestamp.digicert.com
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
