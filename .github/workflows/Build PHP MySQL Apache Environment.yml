@@ -27,9 +27,15 @@ jobs:
     - name: Install Windows SDK
       run: choco install windows-sdk-10.1
       
-    - name: Verify signtool path
+    - name: Find signtool.exe path
       run: |
-        where signtool
+        $signtoolPath = Get-ChildItem -Recurse -Path "C:\Program Files (x86)\Windows Kits\10\bin" -Filter "signtool.exe" | Select-Object -First 1 -ExpandProperty FullName
+        if ($signtoolPath) {
+          echo "signtool.exe found at $signtoolPath"
+        } else {
+          echo "signtool.exe not found"
+        }
+
 
     - name: Install Inno Setup
       run: |
