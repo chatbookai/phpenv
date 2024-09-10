@@ -34,7 +34,7 @@ jobs:
         ISCC.exe "${env:GITHUB_WORKSPACE}\innosetup\install.iss"
         
     - name: Upload compiled EXE file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: MyXinLiJianKang-installer
         path: "D:/a/phpenv/phpenv/MyXinLiJianKang-0.1.exe"
